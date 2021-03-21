@@ -1,0 +1,33 @@
+@import './variables'
+@import './mixins'
+
+.container
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+  //Starting with mobile first styling
+  .case-item
+    width: 100%
+    margin: 15px auto
+    font-family: $font-main
+
+    //Then move to tablet styles (in this case the 50% with slight margin to make it look better)
+    @include bp(sm)
+      width: 45%
+      margin: 15px
+
+    // And then the 30% images with the same styling still carried over from Tablet and mobile.
+    @include bp(lg)
+      width: 30%
+
+    img
+      max-width: 100%
+      height: auto
+
+    a
+      color: $colorPrimary
+      text-decoration: none
+
+      &:hover
+        color: $colorSecondary
